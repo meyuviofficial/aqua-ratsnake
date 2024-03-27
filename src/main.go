@@ -29,6 +29,10 @@ func app() {
 
 	userRoutes := router.Group("/user")
 	userRoutes.POST("/register", controller.Register)
+	userRoutes.GET("/list", controller.List)
+	userRoutes.GET("/get/:id", controller.Get)
+	userRoutes.PATCH("/update/:id", controller.Update)
+	userRoutes.DELETE("/delete/:id", controller.Delete)
 
 	router.Run(":9000")
 	fmt.Print("Server started on port 9000")
